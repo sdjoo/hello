@@ -13,11 +13,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        item posts1 = new item("제목1","내용1");
-        item posts2 = new item("제목2","내용2");
-        item posts3 = new item("제목3","내용3");
+        Item posts1 = new Item("제목1","내용1");
+        Item posts2 = new Item("제목2","내용2");
+        Item posts3 = new Item("제목3","내용3");
 
-        ArrayList<item> board = new ArrayList<>();
+        ArrayList<Item> board = new ArrayList<>();
         board.add(posts1);
         board.add(posts2);
         board.add(posts3);

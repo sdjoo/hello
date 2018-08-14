@@ -10,10 +10,11 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class listadapter extends BaseAdapter {
-    private Context context;
-    private ArrayList<item> postslist;
 
-    public listadapter (ArrayList<item> postslist, Context context){
+    private Context context;
+    private ArrayList<Item> postslist;
+
+    public listadapter (ArrayList<Item> postslist, Context context){
         this.postslist = postslist;
         this.context = context;
     }
@@ -34,9 +35,11 @@ public class listadapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View view = inflater.inflate(R.layout.list_lay, parent, false);
+    public View getView(int position, View view, ViewGroup parent) {
+        if(view == null) {
+            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            view = inflater.inflate(R.layout.list_lay, parent, false);
+        }
         TextView titleview = view.findViewById(R.id.titleid);
         titleview.setText(postslist.get(position).getTitle());
         TextView contextview = view.findViewById(R.id.contextid);
